@@ -1,9 +1,9 @@
-package quru.qa.config;
+package quru.qa.config.web;
 
 import org.aeonbits.owner.Config;
 
 
-@Config.Sources({"classpath:config/${localOrRemote}config.properties"})
+@Config.Sources({"classpath:config/web/${localOrRemote}config.properties"})
 
 public interface WebTestConfig extends Config {
     @Key("browserName")

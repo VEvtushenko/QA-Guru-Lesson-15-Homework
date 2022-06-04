@@ -1,4 +1,4 @@
-package guru.qa.tests.webTests;
+package guru.qa.tests.web;
 
 import org.junit.jupiter.api.Test;
 
