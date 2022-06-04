@@ -6,16 +6,14 @@ import org.aeonbits.owner.ConfigFactory;
 
 public class WebDriverSettings {
 
-    public static WebTestConfig webTestConfig = ConfigFactory.create(WebTestConfig.class, System.getProperties());
+    static WebTestConfig webTestConfig = ConfigFactory.create(WebTestConfig.class, System.getProperties());
 
     public static void webDriverSettings() {
-        String isRemote = System.getProperty("isRemote", "No");
         Configuration.browser = webTestConfig.browser();
         Configuration.browserVersion = webTestConfig.browserVersion();
         Configuration.browserSize = webTestConfig.browserSize();
         Configuration.baseUrl = webTestConfig.baseUrl();
-
-        if (!(webTestConfig.remoteHub().equals("")) & isRemote.equals("Yes")) {
+        if (!(webTestConfig.remoteHub().equals(""))) {
             Configuration.remote = webTestConfig.remoteHub();
         }
     }
